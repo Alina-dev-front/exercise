@@ -1,0 +1,20 @@
+var list = new List<string>
+{
+  "First",
+  "Second",
+  "Third",
+  "Forth",
+  "Sixth",
+  "Seventh"
+}
+
+//foreach loop
+
+list.AsParallel().ForAll(x => Console.WriteLine(x));
+
+Parallel.ForEach(list, x => Console.WriteLine(x));
+
+//for loop
+
+Enumerable.Range(0,7).AsParallel().ForAll(x => Console.WriteLine(list[x]));
+Parallel.For(0,3, x => Console.WriteLine(list[x]));
